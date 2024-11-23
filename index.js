@@ -1,5 +1,6 @@
 const express = require('express');
 require('dotenv').config();
+const cors = require('cors');
 const { dbConnection } = require('./database/config');
 
 
@@ -15,7 +16,8 @@ const app = express();
 dbConnection();
 
 
-
+//CORS para permitir peticiones de otros dominios
+app.use(cors())
 
 // Directorio publico
 // mideleware: es una instruccion que se ejecuta siempre que se levanta el servidor
